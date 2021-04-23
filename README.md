@@ -43,7 +43,6 @@
 
 ​	注意，读取字典的时候需要使用strip()去掉行尾的回车符，否则无法迭代。
 
-​	
 
 # 参考
 
@@ -52,3 +51,7 @@
 [2]  https://github.com/xiaoyaovo/yyzscanner
 
 [3] https://www.bilibili.com/video/BV1Ke411W71L?from=search&seid=15733674525522533428
+
+[4] https://blog.csdn.net/weixin_30770783/article/details/98879140?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-2.control&dist_request_id=1332041.603.16191838166735179&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-2.control
+
+[5]https://blog.csdn.net/weixin_46622106/article/details/111855778
