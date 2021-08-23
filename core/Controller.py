@@ -1,14 +1,12 @@
-import time
-import datetime
-from thirdparty import requests
 from core.UserAgent import get_user_agent
 from core.DictCreate import DictCreate
-from core.Printer import Printer
 from core.Asynchronous import Asynchronous
+from core.Requester import Requester
 
 
 class Controller:
     def __init__(self, options):
+        self.progress = 0
         self.options = options
         self.headers = {
             "Connection": "close",
@@ -28,6 +26,8 @@ class Controller:
         # Input verification
         if not self.options.url.endswith("/"):
             self.options.url += "/"
+        # list size
+        print(": "+str(len(self.List)))
         # Start request
         self.pattern()
 
@@ -35,27 +35,9 @@ class Controller:
     def setHeaders(self, key, value):
         self.headers[key.strip()] = value
 
-    def requester(self):
-        while True:
-            try:
-                # Clear carriage return
-                ex = (next(self.list_iter)).strip()
-                # Making requests
-                r = requests.get(self.options.url + ex, headers=self.headers, verify=False)
-                '''
-                # Output progress
-                percent = str(int(round(self.progress) / round(len(self.list)) * 100))
-                print(percent + "%   " + ex.ljust(110) + "\r", end='')
-                '''
-                # Output result
-                Printer.printLine(r)
-            except StopIteration:
-                break
-
+    # choose mode
     def pattern(self):
-        if self.options.asy == "1":
-            print("async mode start")
+        if self.options.asy:
             Asynchronous(self)
         else:
-            print("normal mode start")
-            self.requester()
+            Requester(self)

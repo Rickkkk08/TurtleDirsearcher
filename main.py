@@ -1,10 +1,8 @@
 import sys
-
 # Judge system version
 if sys.version_info < (3, 0):
     sys.stdout.write("Sorry, we need Python 3.x\n")
     sys.exit(1)
-
 from core.Parser import Parser
 from core.Controller import Controller
 from core.Printer import Printer
