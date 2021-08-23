@@ -1,5 +1,5 @@
 from core.Printer import Printer
-from thirdparty import requests
+import requests
 
 
 def req_get_url(Controller):
