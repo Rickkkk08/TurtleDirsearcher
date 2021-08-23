@@ -1,7 +1,7 @@
 import datetime
 import time
 import colorama
-from thirdparty.colorama import Fore, Style
+from colorama import Fore, Style
 colorama.init(autoreset=True)
 
 
